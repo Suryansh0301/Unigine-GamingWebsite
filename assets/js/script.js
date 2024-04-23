@@ -7,7 +7,7 @@
  */
 
 const addEventOnElements=function(elements,eventType,callback){
-    for (let index = 0,eln=elements.length; index < len; index++) {
+    for (let index = 0,len=elements.length; index < len; index++) {
         elements[index].addEventListener(eventType,callback);
 
         
@@ -30,7 +30,7 @@ const toggleNav=function(){
 
 navToggler.addEventListener("click",toggleNav);
 
-const navClose =(){
+const navClose =()=>{
     navbar.classList.remove("active");
     navToggler.classList.remove("active");
 }
@@ -38,21 +38,24 @@ addEventOnElements(navLinks,"click",navClose);
 
 
 /**
- * HEADER
- * header will be active after scrolled down to 100px of screen
+ * HEADER and BACK TOP BTN
+ * header and backtop btn will be active after scrolled down to 100px of screen
  */
 
-const header=document.querySelector("[data-header]");
+const header  = document.querySelector("[data-header]");
+const backTopBtn = document.querySelector("[data-back-top-btn]");
 
-const activeEL=function(){
-    if(window.scrollY>100){
+const activeEL=function () {
+    if(window.scrollY > 100){
         header.classList.add("active");
+        backTopBtn.classList.add("active");
     }else{
         header.classList.remove("active");
+        backTopBtn.classList.remove("active");
     }
 }
 
-window.addEventListener("scroll",activeEL);
+window.addEventListener("scroll", activeEL);
 
 
 
@@ -68,3 +71,27 @@ const buttonHoverRipple=function(event){
 }
 
 addEventOnElements(buttons,"mousemove",buttonHoverRipple);
+
+
+
+/**
+ * Scroll reveal
+ */
+
+const revealElements =document.querySelectorAll("[data-reveal]");
+
+const revealElementsonscroll = function () {
+
+    for(let i=0, len= revealElements.length; i<len;i++){
+        const isElementInsideWindow = revealElements[i].getBoundingClientRect().top < window.innerHeight / 1.1;
+
+        if(isElementInsideWindow)
+        {
+            revealElements[i].classList.add("revealed");
+        }
+    }
+} 
+
+window.addEventListener("scroll", revealElementsonscroll);
+
+window.addEventListener("load", revealElementsonscroll);
