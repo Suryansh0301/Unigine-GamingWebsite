@@ -95,3 +95,23 @@ const revealElementsonscroll = function () {
 window.addEventListener("scroll", revealElementsonscroll);
 
 window.addEventListener("load", revealElementsonscroll);
+
+
+
+/**
+ * CUSTOM CURSOR
+ */
+
+const cursor=document.querySelector("[data-cursor]");
+const hoverElements = [...document.querySelectorAll("a"), ...document.querySelectorAll("button")];
+
+const cursorMove = function(event){
+    cursor.style.top =`${event.clientY}px`;
+    cursor.style.left =`${event.clientX}px`;
+}
+
+window.addEventListener("mousemove",cursorMove);
+
+addEventOnElements(hoverElements,"mouseover",function () {
+    cursor.classList.remove("hovered");
+});
