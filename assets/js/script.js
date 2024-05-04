@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 /*
  * add events on multiple elements 
  */

@@ -5,21 +5,9 @@
     <!-<--TEXT-->-->
 *\
 
-
-
-
-
-
-
-
-
 /*-----------------------------------*\
   #style.css
 \*-----------------------------------*/
-
-
-
-
 
 /*-----------------------------------*\
   #CUSTOM PROPERTY
@@ -119,8 +107,6 @@
 }
 
 
-
-
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
@@ -190,9 +176,6 @@ body{
 
 ::-webkit-scrollbar-thumb{background-color:var(--bg-purple);}
 
-
-
-
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
@@ -245,7 +228,7 @@ body{
   color: var(--text-white);
   font-size: var(--fontSize-6);
   font-weight: var(--weight-semiBold);
-  max-width:max-content ;
+  max-width:max-content;
   min-width: 180px;
   height: 50px;
   display: grid;
@@ -994,8 +977,6 @@ body{
 
   .section-text{margin-block-end:60px ;}
 
-
-
   /*
    *HERO
   */
@@ -1025,7 +1006,6 @@ body{
   .upcoming-time .card-meta{--fontSize-1:6.2rem; }
 
 
-
   /*
    *FOOTER
   */
@@ -1033,7 +1013,5 @@ body{
   .footer-top .container{grid-template-columns: 1fr 0.5fr 0.5fr 1fr;}
 
   .footer .logo img {width: 205px;}
-
-
 
 }
